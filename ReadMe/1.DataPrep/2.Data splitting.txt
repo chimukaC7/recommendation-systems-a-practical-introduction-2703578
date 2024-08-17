@@ -1,0 +1,21 @@
+Sure, let's simplify the topic of data splitting in recommendation systems:
+
+Data Splitting: This is the process of dividing your data into two parts: one for training the model (training set) and one for testing it (test set).
+
+Types of Splits:
+
+Random Split: Imagine shuffling a deck of cards and then splitting it into two piles. This is the easiest and fastest way to split data.
+Chronological Split: Think of arranging photos in a timeline and then splitting them into two groups based on time. This is useful when you want to predict future behavior based on past actions.
+Stratified Split: This ensures that both the training and test sets have a similar distribution of users and items. It's like making sure both piles of shuffled cards have the same number of each suit.
+
+Why Split Data?: By splitting data, you can train your model on one part and test its accuracy on the other, ensuring it performs well on new, unseen data.
+
+
+These methods help create a more reliable recommendation system by mimicking real-world scenarios.
+
+
+
+
+Data splitting
+Selecting transcript lines in this section will navigate to timestamp in the video
+- [Instructor] Let's get deep into data splitting. As you know, we want to split the whole dataset into train and test. We train the machine-learning algorithm in the train set and evaluate its performance in the test set. But data splitting in reco is also slightly different from other areas in machine learning. In this video, we're going to see what are the most common splitting methods in recommendation systems. The first method of splitting is random split. In random split, we randomly split a dataset into two portions. A common ratio is 80% of the data goes to the training set, and 20% goes to the test set. Now think of a real e-commerce scenario. You have historical data on the behavior of your customers, and you want to predict what items they are more likely to buy. In this scenario, it makes much more sense to split the data chronologically because the behavior of your customers changes over time. For each user, you're going to order the data chronologically and split it into the training and test set. This is the chronological split. Finally, some algorithms need that the same set of users or items appear in both the training and the test sets. This is just to make sure that the valuation is statistically sound and to avoid something called the cold start problem, which we will discuss in another video. In conclusion, random split is the easiest and fastest split that you can use. Chronological split is useful when you want to replicate a real business scenario and want to predict in terms of time. And, finally, the stratified split is used when we want the same proportion of users and items in the training and test sets.

@@ -1,0 +1,21 @@
+Sure, let's simplify the "cold start problem":
+
+Cold Start Problem: This happens when a recommendation system doesn't have enough information about a new user or a new item to make accurate recommendations.
+
+Cold Users: Imagine you just signed up for a new streaming service, and it doesn't know your preferences yet. The system struggles to recommend shows or movies you might like because it lacks data on your tastes.
+
+Cold Items: Think of a newly released book. Since no one has read or reviewed it yet, the system has a hard time recommending it to users.
+
+Solutions:
+
+Gather More Data: Ask new users about their preferences when they sign up or show popular items first to gather initial interactions.
+Use Different Interactions: Instead of just using purchases, consider clicks, views, or saves to gather more data.
+Content-Based Filtering: Recommend items based on similarities in user demographics or item features like description, price, or brand.
+
+
+In short, the cold start problem is about dealing with a lack of data for new users or items, and it can be addressed by collecting more data or using specific algorithms.
+
+
+The cold start problem
+Selecting transcript lines in this section will navigate to timestamp in the video
+- So far you know that recommendation systems is all about understanding the past behaviors of users to predict what they might like in the future. But what if you don't have information about a user? This is what we call the cold-start problem. Have you ever logged into a website where the first thing they ask you is select what type of products you like or what themes you are interested in? That was probably designed by the reco team to address the cold-start problem. The cold-start problem can refer to users or items. Cold users are those who have not provided enough data to make accurate recommendations. It happens when a user is new to the system, has not yet interacted with many items, or when a user is infrequent. A scenario with a lot of cold users is a website for buying a house. Most people buy one or two houses in their life and over long periods of time. On the other hand, cold items are those that have not been interacted with by many users. A typical example is a new release. If the item is new, nobody has interacted with it yet. Another example of a cold item is when the item is not very popular, like imagine a book on a very specialized subject. In this case, the problem is that we have few interactions about it. The cold-start problem is one of the toughest problems to solve, and unfortunately most of the recommendation systems you will find in a business need to face this challenge. There are several ways of solving the cold-start problem. The first one is getting more data. This is actually a general rule in machine learning that also applies to reco, Data wins over model. You won't see these in theoretical papers because they need a fixed data set as a benchmark to compare. But in a real business scenario, one of the best ways to improve a recommendation system is acquiring more data. To solve the cold-start problem on users, you can create an initial questionnaire when they sign up for a website or even show the most popular items in the first 5 to 10 interactions of the user and then change the algorithm. Another technique is to consider different types of interactions. In an e-commerce, for example, instead of only using the interaction buy, use others like click, save for later, or view with a penalty wait to make sure we don't bias the algorithm. For cold items, a typical approach is to show new releases on the homepage to gather more interactions. The other way of fixing the cold-start problem is using a specific set of algorithms called content-based filtering algorithms. They are designed to recommend items based on user and item feature similarity. For example, for cold users we can measure similarity in terms of demographics. For cold items, we can measure similarity in terms of description, price, brand, or prototype. In conclusion, the cold-start problem is one of the biggest issues in recommendation systems, and it is addressed either by gathering more data or by using content-based filtering algorithms.

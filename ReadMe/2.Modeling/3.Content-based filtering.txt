@@ -1,0 +1,40 @@
+Sure, let's simplify the topic of "Content-based filtering":
+
+Content-Based Filtering Basics
+Concept: Recommends items based on their features and how they match user preferences.
+
+How It Works
+Data Table:
+
+Imagine a table where each row is a transaction (like a purchase or a click).
+Columns include features of the user (like location, age) and features of the item (like price, brand).
+
+Label:
+
+The label is what you want to predict, such as whether a user will buy an item (yes or no).
+
+Algorithms:
+
+Tree-Based Algorithms: Great for tabular data. Example: Gradient Boosting Decision Trees (LightGBM) which are fast and accurate.
+Nearest-Neighbor Methods: Items close to each other in feature space are similar. Example: K-NN uses the closest items to make predictions.
+Transformers: Useful for text data, like item descriptions.
+Logistic Regression: Simple and fast but usually less accurate. Good for very large datasets or as a secondary step to refine recommendations.
+
+
+Key Points
+User and Item Features: Use characteristics of users and items to make recommendations.
+Overcoming Cold Start: Effective when you don't have much interaction data, like for new users or items.
+
+Summary
+Content-Based Filtering: Recommends based on features of users and items.
+Algorithms: Includes tree-based methods, nearest-neighbor, transformers, and logistic regression.
+Advantages: Useful for new users/items and when you have detailed feature data.
+
+By understanding these basics, you can see how content-based filtering helps in making personalized recommendations based on user and item characteristics.
+
+
+
+
+Content-based filtering
+Selecting transcript lines in this section will navigate to timestamp in the video
+- Content-based filtering algorithms can be useful when we have user or item features or when we don't have a lot of interaction data. The content-based formulation of our recommendation problem is set as a tabular data problem. Here's an example from an e-commerce. You create a table with a row for each transaction in your database. As the columns, you can add features of the user, like location, age, gender, et cetera, and features of the items he or she has interacted with, price, brand, type, et cetera. The label you want to predict is the type of interaction. I will start with a binary buy or not buy, zero or one. And later, in future experiments, I will add other type of interactions like view, click, et cetera. If I join a new team and want to use content-based algorithms, we might use methods like tree-based algorithms, nearest-neighbor methods, transformers, and logistic regression. You might be surprised that I put logistic regression in the last place. That's right, this is the last algo I will try if I were starting in a new team. I'll tell you the reason later. Tree-based algorithms are generally the best performers when we have tabular data. In that family, my favorite is the gradient boosting decision tree. In particular, I like implementation of LightGBM, which runs on CPU, GPU, and PySpark. It is pretty accurate and fast when the data set is large. Another algorithm I typically use is a random forest. There are multiple implementations, but my favorite is also with LightGBM. You can transform a gradient boosting decision tree into a random forest by just adding two parameters to the main class. Neatest-neighbor methods assume that what is close in the feature-space is similar in real life. We can use K-NN methods in classification or regression where the K is the number of similar feature vectors we want to use for computation. In a classification scenario, like buy or not buy, the K-NN algorithm computes an unknown class as the most common class of the K nearest neighbors. In contrast, in regression, K-NN calculates the average of the K nearest neighbors. To find the neighbors in the feature-space, we use similarity metrics like cosine similarity or others. In recent years, we have seen a lot of transformer-based algorithms. They work particularly well when there is text data. Think about using the description of the items. Now let's talk about logistic regression. Maybe you have done other machine learning courses and they teach you logistic regression in lesson two. Maybe you have even heard that most problems in the industry can be solved with logistic regression. This is false, by the way. There is a reason why they teach you logistic regression in lesson two. Logistic regression is a fundamental algorithm used as a building block in many algorithms. It is easy to understand and simple to implement. This is a practical course, not a theoretical one. And my objective is to show you what algorithms to use when you work in the industry. In the vast majority of scenarios with tabular data, gradient boosting will beat logistic regression. There are two cases where I will use logistic regression in a recommender. The first one is when you have a huge amount of data in the order of terabytes per day, and strong requests requirements in the order of less than 200 milliseconds. The second case is when you use logistic regression as a re-ranker. In this situation, you have a heavy algorithm that produces a set of recommendation candidates, let's say 1,00 candidates per user, and then you use logistic regression to re-rank or reorder these candidates in real time. In summary, content-based filtering algorithms can be a good solution to implement when you have user and item features. Also, they can overcome the cold-start problem.

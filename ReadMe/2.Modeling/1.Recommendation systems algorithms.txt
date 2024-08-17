@@ -1,0 +1,33 @@
+Sure, let's simplify the topic of "Recommendation systems algorithms":
+
+Two Main Types of Algorithms
+Collaborative Filtering:
+
+Concept: Recommends items based on user behavior. If two users have similar tastes, what one likes, the other might like too.
+Example: If Andreas likes "The Lord of the Rings" and "Star Wars," and Tao likes "The Lord of the Rings," it's likely Tao will also like "Star Wars."
+Data Used: Looks at patterns in user behavior like purchase history, ratings, or clicks.
+
+Content-Based Filtering:
+
+Concept: Recommends items based on item features and user preferences. If a user likes items with certain features, similar items will be recommended.
+Example: If Nikhil, a 25-35-year-old from Los Angeles, likes a specific barbecue, it's likely that Le, who is also in the same age group and area, will like that barbecue too.
+Data Used: Uses features of users and items (like age, location, item description) to make recommendations.
+
+
+Key Points
+Collaborative Filtering: Best when you have lots of user interaction data.
+Content-Based Filtering: Useful when you have new users or items with little interaction data.
+Practical Advice: Experiment with both types to see which works best for your needs.
+
+Summary
+Collaborative Filtering: Recommends based on similar user behaviors.
+Content-Based Filtering: Recommends based on item and user features.
+Choosing an Algorithm: Depends on the amount and type of data you have.
+
+By understanding these two main types of recommendation algorithms, you can better decide which one to use based on your data and needs.
+
+
+
+Recommendation systems algorithms
+Selecting transcript lines in this section will navigate to timestamp in the video
+- Okay, now that we know a little bit about recommendation systems, let's get deep into the two big families of algorithms. We have the content-based filtering and the collaborative filtering. The underlying idea of collaborative filtering is that people that behave the same are going to have the same preferences. In other words, we correlate people's behaviors. Here's a practical example. If Andreas liked "The Lord of the Rings" movies and "Star Wars," and Tao also liked "The Lord of the Rings" movies, then we can argue that Andreas and Tao had similar behavior. So it makes sense to recommend the "Star Wars" movies to Tao. Technically, collaborative filtering algorithms discover patterns in observed behaviors like purchase history, item ratings, or clicks count across a group of users, and then recommend items based on those patterns. There is a wide variety of collaborative filtering algorithms that you can find in recommender's library. In this course, we're going to do a practical example with SAR. The other big family of recommendation system algorithms is called content-based filtering. The intuition is that people with similar demographics are going to like products with similar features. We correlate users and items features. Let me give you an example. Nikhil lives in Los Angeles, California, and is from the age group 25 to 35, has bought X barbecue, and Le, who lives in the same area has the same age group is likely to also like that barbecue. In technical terms, content-based filtering algorithms use user and item features to predict preferences based on those features. Many of the traditional classification of regression algorithms using tabular data can be used to solve this problem. There are multiple content-based algorithms available in recommended library. In this course, we're going to do an example with live GBM. One interesting detail of content-based algorithms is that they can handle call users. So as a practical advice, if you have large amount of interaction data, start with collaborative filtering algorithms. If you have a lot of called users or items, start with content-based algorithms. In summary, collaborative filtering algorithms are based on user interactions with items and content-based algorithms are based on user and item features. The job of the data scientists is to make experiments with a number of these algorithms and figure out which one provides the highest value.

@@ -1,0 +1,50 @@
+Let's break down the topic of "Data prep" from the video:
+
+Data Preparation in Recommendation Systems
+Data Splitting:
+
+Importance: Splitting data is crucial in recommendation systems to ensure the model can generalize well to new data.
+Types of Splits:
+Random Split: This is like shuffling a deck of cards and splitting it into two piles. It's quick but might not always be the best for recommendation systems.
+Chronological Split: Imagine arranging events in a timeline and then splitting them based on time. This is useful for predicting future behavior based on past actions.
+Stratified Split: Ensures that both the training and test sets have similar distributions of users and items, like making sure both piles of shuffled cards have the same number of each suit.
+
+
+Handling Timestamps:
+
+Transformation: Convert Unix timestamps to a standard readable format to make the data easier to understand and work with.
+
+Cold-Start Problem:
+
+Definition: Occurs when there isn't enough data about a new user or item to make accurate recommendations.
+Solution: Use stratified splitting to ensure the same users appear in both training and test sets, reducing the cold-start issue.
+
+Practical Scenarios:
+
+Movie Recommender: For a media company, you might want to recommend similar movies. Ensure the same users are in both training and test sets to make evaluations statistically sound.
+E-commerce: Split data chronologically, where the training set is older data and the test set is more recent data.
+
+Filtering:
+
+Minimum Rating Filter: Drop users with very few interactions to avoid cold-start issues. For example, users with less than 10 ratings might be excluded.
+
+
+Simplified Steps
+Load Data: Import the dataset and understand its structure (user IDs, movie IDs, ratings, timestamps).
+Transform Data: Convert timestamps to a standard format.
+Split Data: Use different splitting techniques (random, chronological, stratified) based on the scenario.
+Filter Data: Apply minimum rating filters to remove users with insufficient interactions.
+
+Key Takeaways
+Data splitting is essential for training and testing recommendation systems effectively.
+Different splitting techniques are used based on the specific needs of the recommendation system.
+Handling timestamps and filtering data are important steps in preparing data for recommendation systems.
+
+By understanding these steps, you'll be better equipped to handle data preparation in recommendation systems, ensuring your models are robust and reliable.
+
+
+
+
+Coding: Data prep
+Selecting transcript lines in this section will navigate to timestamp in the video
+- [Instructor] We're going to talk now about data preparation. The first thing I'm going to do is I'm going to run the notebook. So while I'm talking, this is run. Data splitting is one of the most important tasks in recommendation systems, and it is a little bit different to what you will expect in other machine learning solutions. Well, let's go through the notebook. First, we have the imports. Here we have some parameters. We're going to use the movielens dataset, in particular, the MovieLens-100K. So we load the dataset and the dataset looks like this. So we have a set of user IDs, movies IDs, and then the rating. The rating goes from one to five. And we're going to also have the timestamp in Unix notation. And it is called MovieLens-100K because it has 100,000 rows. Here we have some description of the dataset on the different columns. For example, here you see that the minimum is one and the maximum is five, and some of the limits of the user IDs and movies IDs. And you see the statistics that we have. We have a hundred thousand ratings and a good number of users and items. Now, the first thing we want to do is we want to transform the timestamp to something that we can understand. So we're going to use this function to transform it to the standard notation. And now let's talk about the kind of scenarios that you might find in a company in a real world scenario. One scenario is, for example, a movie recommender. In that case, let's say you are a media company and you want to recommend similar movies. And in order to make sure that the evaluation is statistically sound, we want to make sure that in the training and the test set, we have the same users in both sides, right? With this, we are able to reduce or even eliminate completely the cold-start problem. And with that, you can use splitting technique called stratified splitting, and we're going to talk about it later. The other approach is, for example, what you will find in an e-commerce. In this case, it makes sense to split the data in a timely fashion. So what you can do is you can split the data, for example, everything that is before one month is a training set, and then the test set is going to be the last month. That will be a chronological splitting. Now let's talk about the kind of splitting and see how they work. The simplest one is the random split, this is quite common in machine learning. And basically we take a random sample of the different data sets, and just use it. In this case, the partition is very quick, it's the quickest way you can do splitting, and sometimes it works. If you want to do something quick, the random split is something that you can consider. Now, let's talk about the chronological split. The idea is that you divide the dataset based on timestamp, and we have a functioning recommenders called Python cron split, and you can filter by user. So for example, if you filter by user and a splitting ratio is 0.7, that is 70%, that means that 70% of the ratings of that user, they're going to be sorted, and 70% is going to go to the training set, and the rest, 30%, is going to be in the test set. All of that chronologically, so it's sorted chronologically. And this is the notation, you see is quite easy to compute. And here we have an example on how it works. Now, something that sometimes is useful is to have a minimum rating filter. That means that when you have very little interactions from one specific user, you can drop that user, and it's a good practice to drop that user. That user will be a cold-start user, right? So you can define this minimum threshold. And for example, here we define 10. So every user that has less than 10 ratings is dropped from the datasets. Now let's talk about the stratified split. In the stratified split, what you do is you make sure that the same set of users or items will appear in both training and test set. So for example, if you can see that the random split, it could happen that you have a specific user in the training set, but this user is not in the test set. Depending on the algorithm, that can be challenging, and sometimes the algorithm will not work for a user that is not being trained on. With the stratified split, you erase this problem, you make sure that the same user, for example, has interactions in the training set and it has interaction in the test set. And you can filter by user or you can filter by item. Imagine you want to split the data set based on the items, so you want same items appearing in the training set and the test set, it will work. And here you also have the minimum filter, the threshold, so you can remove users that have a minimum threshold. That's the notebook. This is the base of the first step before doing any machine learning. In future notebooks, we're going to see how we can train using these splitting techniques.

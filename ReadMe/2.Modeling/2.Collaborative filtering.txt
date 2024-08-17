@@ -1,0 +1,50 @@
+Sure, let's simplify the topic of "Collaborative filtering":
+
+Collaborative Filtering Basics
+Goal: Predict what users will like based on their past behavior and the behavior of similar users.
+
+How It Works
+R Matrix: Imagine a big table (matrix) where rows are users and columns are items (like movies or products). Each cell shows how a user interacted with an item (e.g., rating or purchase).
+Sparsity: Most of this table is empty because users haven't interacted with most items.
+Prediction: The goal is to fill in the missing cells with predictions of what users might like.
+
+Techniques
+Memory Methods:
+
+Affinity Matrix: Measures how much users like items.
+Item Similarity Matrix: Measures how similar items are to each other.
+Combination: Multiply these matrices to predict user preferences for similar items.
+
+Matrix Factorization:
+
+Break Down the Matrix: Split the big table into two smaller tables (user matrix and item matrix) with fewer dimensions.
+Reconstruct: Multiply these smaller tables to predict the missing values in the big table.
+
+Factorization Machines:
+
+Enhanced Matrix Factorization: Adds more features about users and items to improve predictions.
+
+Pairwise Ranking:
+
+Preference Pairs: Instead of just predicting ratings, it focuses on comparing pairs of items to see which one a user prefers.
+
+Deep Learning Methods:
+
+Embeddings: Create vector representations of users and items to measure their affinity.
+Graph Neural Networks: Use graph structures to represent users and items, connecting them based on interactions.
+
+
+Summary
+Collaborative Filtering: Predicts user preferences based on similar users' behavior.
+Techniques: Include memory methods, matrix factorization, factorization machines, pairwise ranking, and deep learning methods.
+Goal: Fill in the missing interactions in the user-item matrix to make accurate recommendations.
+
+By understanding these basics, you can grasp how collaborative filtering works to recommend items to users.
+
+
+
+
+
+Collaborative filtering
+Selecting transcript lines in this section will navigate to timestamp in the video
+- If this were a normal recommendation system course, the instructor probably will give you an overview of the history of recommendation systems. However this course is practical and we're interested in understanding the algorithms that you can use in the industry today. In this video, I'm going to give you an overview of the most useful algorithms that you can try. We're not going to get very deep into each of them, but I'm going to give you the intuition behind any of them. The first thing you need to understand is that the collaborative filtering problem is to figure out the missing entries of the R matrix. The R matrix is a matrix where in the rows we list all the users and in the columns all the items. Initially we fill up the matrix with the interactions we have. This matrix is very sparse with a lot of missing entries. Then we will use algorithms to predict the missing entries based on the information we have. Here is the list of the techniques I will use if I joined a new team to build a strong recommendation system. The techniques are memory methods, matrix factorization, factorization machines, pairwise ranking, multi-layer perceptions, graph neural networks, and transformers. The idea of memory methods is creating two matrices. The first matrix measures the affinity of users towards items. We can add temporal factors like the older the interaction, the lower the affinity. We can also weight the interaction like the action buy shows more affinity towards an item than the action click. The second matrix is the item similarity matrix, measuring the similarity between pair of items. If we multiply these two matrices, we obtain the affinity of users towards items that are similar to the ones they liked. Don't worry if you don't understand. We'll go into the details of a useful memory algorithm called SAR. Matrix factorization is a mathematical technique to reconstruct the R matrix using lineal algebra. The intuition is that first, we define a parameter called the factor. Typically a small number between 10 and 200. Second, we compute two new matrices, the user matrix and the item metrics. The user matrix size is number of users times the factor and the item matrix size is the factor times the number of items. When we multiply the user and item matrix, we get the predicted R matrix. This is the matrix that has all the predicted entries that we want to recommend. The optimization problem is minimizing the difference between the real and the predicted R matrix. Another good family of algorithms is factorization machines. Now you might be asking wait, wait, wait, Miguel. Didn't you say there was some collaborative filtering method called matrix factorization? Yeah, matrix factorization, factorization machines. Isn't this super confusing? Yes, look, between you and me, sometimes people in recommendation systems make things super confusing. Do they do it on purpose? Maybe, anyway, you can think of factorization machines as if you take a matrix factorization with a user and item interaction data and add user and item features. The idea of pairwise ranking can be applied to many algorithms. Fundamentally it is a way to solve the negative feedback problem when we have implicit feedback, that is if you remember when we have less informative interactions like click, view, et cetera, we only have positive interactions. So the way to create the R matrix is by adding ones into the click and view entries and zeros in the rest. In pairwise ranking, we create a different data set that has preferences over pairs of interactions. By collecting pairwise comparisons, the model can learn user preferences and generate personalized recommendations, avoiding the negative feedback problem. There is a group of methods based on different types of deep learning techniques. The idea is to create user and item embeddings and compute the dot product. The user and item embeddings are vectorial representations of the user and items. The dot product of user embeddings times the item embeddings is a measurement of the affinity between the user and the items. A graph network is a type of network that is designed to operate on graph structured data. The data and recommendation systems can be represented as graphs where the users and items are the nodes in the graph and the interactions are the connections between nodes. DNNs can be used to recommend items or even recommend users to users. The transformer architecture and mother large language models have been a breakthrough in AI. Some of the most advanced recommendation algorithms use the transformer architecture to predict user preferences. We have seen some of the top collaborative filtering techniques that are useful today.
